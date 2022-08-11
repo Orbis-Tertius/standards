@@ -7,7 +7,7 @@ These coding standards do not cover issues of verification or correctness
 or performance. These coding standards apply to achieving code quality, as distinct
 from correctness. Code quality is related to the ease of reading and reasoning
 about the code. Code quality includes not just the quality of pieces of code in
-isolation, but the quality of the code base overall, which includes consistency.
+isolation, but the quality of the code base overall, which includes consistency within and between projects at Orbis Labs.
 
 ## Definitions
 
@@ -51,7 +51,8 @@ Arithmetic must be exact. There is no floating point arithmetic allowed.
 
 Use Ormolu. CI pipelines must fail if Ormolu makes changes to the source. Ormolu
 may be selectively disabled on specific code sections if it butchers them.
-Use hlint with the Orbis standard configuration (TODO). CI pipelines must fail if there
+Use hlint with the [Orbis standard hlint configuration](https://github.com/Orbis-Tertius/standards/blob/master/hlint.yaml).
+CI pipelines must fail if there
 are any hlint hints. Hlint hints may be disabled selectively on code sections and
 files where they are obnoxious.
 
