@@ -49,6 +49,17 @@ Arithmetic must be exact. There is no floating point arithmetic allowed.
 
 ## Haskell specific guidelines
 
+Each module must have an export list. Imports should be explicit or qualified.
+
+The following GHC flags must be enabled in CI pipelines for all code:
+
+```
+-Wall -Werror -Wincomplete-uni-patterns -Wincomplete-record-updates
+-Wpartial-fields -Wmissing-home-modules -Widentities -Wredundant-constraints
+-Wcpp-undef -Wmissing-export-lists -Wmonomorphism-restriction
+-Wmissing-local-signatures -Wmissed-specialisations -Wall-missed-specialisation
+```
+
 Use Ormolu. CI pipelines must fail if Ormolu makes changes to the source. Ormolu
 may be selectively disabled on specific code sections if it butchers them.
 Use hlint with the [Orbis standard hlint configuration](https://github.com/Orbis-Tertius/standards/blob/master/hlint.yaml).
