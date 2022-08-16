@@ -52,5 +52,7 @@
        - error: {lhs: unsafeFixIO, rhs: id, name: "No unsafeFixIO"}
        - error: {lhs: accursedUnutterablePerformIO, rhs: id, name: "No accursedUnutterablePerformIO"}
        - hint: {lhs: return, rhs: pure, name: "Use pure"}
+       - error: {lhs: findMax, rhs: lookupMax, name: "No findMax"}
+       - error: {lhs: findMin, rhs: lookupMin, name: "No findMin"}
  - extensions:
    - {name: DeriveAnyClass, within: []}
