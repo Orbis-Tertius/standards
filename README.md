@@ -67,7 +67,7 @@ CI pipelines must fail if there
 are any hlint hints. Hlint hints may be disabled selectively on code sections and
 files where they are obnoxious.
 
-Use vinyl extensible records instead of native record types.
+Use vinyl and composite extensible records instead of native record types.
 
 Use [really-safe-money](https://github.com/NorfairKing/really-safe-money) for
 computing all cryptocurrency amounts.
