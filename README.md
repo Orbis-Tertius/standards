@@ -54,20 +54,25 @@ Each module must have an export list. Imports should be explicit or qualified.
 The following GHC flags must be enabled in CI pipelines for all code:
 
 ```
--Wall -Werror -Wincomplete-uni-patterns -Wincomplete-record-updates
--Wpartial-fields -Wmissing-home-modules -Widentities -Wredundant-constraints
--Wcpp-undef -Wmissing-export-lists -Wmonomorphism-restriction
--Wmissing-local-signatures -Wmissed-specialisations -Wall-missed-specialisation
+ghc-options:
+- -Weverything
+- -Wno-all-missed-specialisations
+- -Wno-implicit-prelude
+- -Wno-missing-safe-haskell-mode
+- -Wno-prepositive-qualified-module
+- -Wno-safe
+- -Wno-unsafe
 ```
 
 Use Ormolu. CI pipelines must fail if Ormolu makes changes to the source. Ormolu
 may be selectively disabled on specific code sections if it butchers them.
+
 Use hlint with the [Orbis standard hlint configuration](https://github.com/Orbis-Tertius/standards/blob/master/hlint.yaml).
 CI pipelines must fail if there
 are any hlint hints. Hlint hints may be disabled selectively on code sections and
 files where they are obnoxious.
 
-Use vinyl extensible records instead of native record types.
+Use [vinyl extensible records](https://hackage.haskell.org/package/vinyl) instead of native record types.
 
 Use [really-safe-money](https://github.com/NorfairKing/really-safe-money) for
 computing all cryptocurrency amounts.
