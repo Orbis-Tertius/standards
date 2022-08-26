@@ -54,14 +54,17 @@ Each module must have an export list. Imports should be explicit or qualified.
 The following GHC flags must be enabled in CI pipelines for all code:
 
 ```
-ghc-options:
-- -Weverything
-- -Wno-all-missed-specialisations
-- -Wno-implicit-prelude
-- -Wno-missing-safe-haskell-mode
-- -Wno-prepositive-qualified-module
-- -Wno-safe
-- -Wno-unsafe
+-Werror
+-Weverything
+-Wno-all-missed-specialisations
+-Wno-implicit-prelude
+-Wno-missing-safe-haskell-mode
+-Wno-prepositive-qualified-module
+-Wno-safe
+-Wno-unsafe
+-threaded
+-rtsopts
+-with-rtsopts=-N
 ```
 
 Use Ormolu. CI pipelines must fail if Ormolu makes changes to the source. Ormolu
