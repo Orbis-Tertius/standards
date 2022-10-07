@@ -8,7 +8,7 @@
        - error: {lhs: tail, rhs: tailMay, name: "No tail"}
        - error: {lhs: init, rhs: initMay, name: "No init"}
        - error: {lhs: last, rhs: lastMay, name: "No last"}
-       - error: {lhs: (!!), rhs: indexMay, name: "No !!"}
+       - error: {lhs: (!!), rhs: atMay, name: "No !!"}
        - error: {lhs: fromJust, rhs: fromMaybe, name: "No fromJust"}
        - error: {lhs: read, rhs: readMay, name: "No read"}
        - error: {lhs: toEnum, rhs: toEnumMay, name: "No toEnum"}
